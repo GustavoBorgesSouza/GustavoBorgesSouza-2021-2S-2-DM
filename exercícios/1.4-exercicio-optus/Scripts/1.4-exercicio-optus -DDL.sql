@@ -16,7 +16,7 @@ CREATE TABLE Usuario(
 	NomeUsuario VARCHAR(20) NOT NULL,
 	Email VARCHAR(256) NOT NULL,
 	Senha VARCHAR(30) NOT NULL,
-	TipoPermissao VARCHAR(13) NOT NULL
+	TipoPermissao BIT NOT NULL
 );
 GO
 
@@ -24,7 +24,6 @@ CREATE TABLE Artista(
 	IdArtista INT PRIMARY KEY IDENTITY(1,1),
 	IdEmpresa INT FOREIGN KEY REFERENCES Empresa(IdEmpresa),
 	NomeArtista VARCHAR(20) NOT NULL,
-	Banda VARCHAR(26)
 );
 GO
 
@@ -37,7 +36,17 @@ GO
 CREATE TABLE Album(
 	IdAlbum INT PRIMARY KEY IDENTITY(1,1),
 	IdArtista INT FOREIGN KEY REFERENCES Artista(IdArtista),
-	IdEstilo INT FOREIGN KEY REFERENCES Estilo(IdEstilo),
-	NomeAlbum VARCHAR(30) NOT NULL,
+	TituloAlbum VARCHAR(50) NOT NULL,
+	DataLancamento DATE NOT NULL,
+	Localizacao VARCHAR(100) NOT NULL,
+	Tempo VARCHAR(10) NOT NULL,
+	Visivel BIT NOT NULL
+);
+GO
+
+CREATE TABLE EstiloAlbum(
+	IdEstiloALbum INT PRIMARY KEY IDENTITY(1,1),
+	IdAlbum INT FOREIGN KEY REFERENCES Album(IdAlbum),
+	IdEstilo INT FOREIGN KEY REFERENCES Estilo(IdEstilo)
 );
 GO

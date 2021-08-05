@@ -50,6 +50,7 @@ CREATE TABLE Consulta(
 	IdConsulta INT PRIMARY KEY IDENTITY(1,1),
 	IdVeterinario INT FOREIGN KEY REFERENCES Veterinario(IdVeterinario),
 	IdPet INT FOREIGN KEY REFERENCES Pet(IdPet),
-	DataConsulta SMALLDATETIME
+	DataConsulta SMALLDATETIME,
+	DescricaoConsulta VARCHAR(2000)
 );
 GO

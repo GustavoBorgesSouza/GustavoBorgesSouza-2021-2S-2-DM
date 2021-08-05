@@ -47,6 +47,7 @@ CREATE TABLE Aluguel(
 	IdAluguel INT PRIMARY KEY IDENTITY(1,1),
 	IdVeiculo INT FOREIGN KEY REFERENCES Veiculo(IdVeiculo),
 	IdCliente INT FOREIGN KEY REFERENCES Cliente(IdCliente),
-	DataAluguel DATETIME 
+	DataRetirada DATE,
+	DataDevolucao DATE
 );
 GO

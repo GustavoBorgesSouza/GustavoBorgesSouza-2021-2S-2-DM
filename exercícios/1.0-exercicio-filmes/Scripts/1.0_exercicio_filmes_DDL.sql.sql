@@ -17,4 +17,4 @@ CREATE TABLE Filme(
 	IdGenero TINYINT FOREIGN KEY REFERENCES Genero(IdGenero),
 	TituloFilme VARCHAR(70)
 );
-GO
+
