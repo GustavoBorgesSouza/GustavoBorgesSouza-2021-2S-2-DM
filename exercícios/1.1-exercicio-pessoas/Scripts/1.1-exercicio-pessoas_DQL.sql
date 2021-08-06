@@ -12,3 +12,14 @@ GO
 
  SELECT * FROM Telefone;
  GO
+
+ SELECT Nome, NumeroTelefone, EnderecoEmail, Descricao
+ FROM Pessoa
+ LEFT JOIN Telefone
+ ON Pessoa.IdPessoa = Telefone.IdPessoa
+ LEFT JOIN Email
+ ON Pessoa.IdPessoa = Email.IdPessoa
+ LEFT JOIN CNH
+ ON Pessoa.IdPessoa = CNH.IdPessoa
+ ORDER BY Nome desc;
+ GO

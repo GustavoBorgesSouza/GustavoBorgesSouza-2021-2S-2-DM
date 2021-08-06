@@ -21,3 +21,10 @@ GO
 --SELECT * FROM Filme;
 --GO
 
+INSERT INTO Genero(NomeGenero)
+VALUES ('Terror');
+GO
+
+INSERT INTO Filme(TituloFilme)
+VALUES ('Filmão');
+GO

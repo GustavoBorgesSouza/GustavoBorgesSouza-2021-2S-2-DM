@@ -7,14 +7,16 @@ GO
 CREATE TABLE Clinica(
 	IdClinica INT PRIMARY KEY IDENTITY(1,1),
 	NomeClinica VARCHAR(20) NOT NULL,
-	Endereco VARCHAR(100) NOT NULL UNIQUE
+	Endereco VARCHAR(100) NOT NULL UNIQUE,
+	RazaoSocial VARCHAR(100)
 );
 GO
 
 CREATE TABLE Veterinario(
 	IdVeterinario INT PRIMARY KEY IDENTITY(1,1),
 	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica),
-	NomeVeterinario VARCHAR(20)
+	NomeVeterinario VARCHAR(20),
+	CRMV VARCHAR(6)
 );
 GO
 
