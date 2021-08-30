@@ -16,7 +16,9 @@ namespace senai_filmes_webAPI.Properties.Repositories
         /// initial catalog = Nome do bacno de dados
         /// integrated security = faz a autenticação do windows
         /// </summary>
-        private string stringConexao = "Data source=localhost\\SQLEXPRESS01; initial catalog=CATALOGO; integrated security=true";
+        //private string stringConexao = "Data source=localhost\\SQLEXPRESS01; initial catalog=CATALOGO; integrated security=true";
+        private string stringConexao = "Data Source=NOTE0113I2\\SQLEXPRESS; initial catalog=CATALOGO; user id=sa; pwd=Senai@132";
+
         public void AtualizarIdURL(int IdFilme, FilmeDomain filme)
         {
             throw new NotImplementedException();
@@ -31,12 +33,15 @@ namespace senai_filmes_webAPI.Properties.Repositories
         {
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string queryInsert = $"INSERT INTO Filme(IdGenero, TituloFilme) VALUES ({NovoFilme.IdGenero}, '{NovoFilme.TituloFilme}')";
+                string queryInsert = $"INSERT INTO Filme(IdGenero, TituloFilme) VALUES (@idGenero, @NomeFilme)";
 
                 con.Open();
 
                 using (SqlCommand cmd = new SqlCommand(queryInsert,con))
                 {
+                    cmd.Parameters.AddWithValue("@idGenero", NovoFilme.IdGenero);
+                    cmd.Parameters.AddWithValue("@NomeFilme", NovoFilme.TituloFilme);
+
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -44,7 +49,19 @@ namespace senai_filmes_webAPI.Properties.Repositories
 
         public void Deletar(int IdFilme)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string queryDelete = "DELETE FROM Filme WHERE IdFilme = @IdINT";
+
+                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                {
+                    cmd.Parameters.AddWithValue("@IdINT", IdFilme);
+
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public List<FilmeDomain> ListarTodos()

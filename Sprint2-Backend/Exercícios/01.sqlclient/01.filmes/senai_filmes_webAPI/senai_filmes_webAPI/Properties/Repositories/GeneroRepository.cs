@@ -17,8 +17,9 @@ namespace senai_filmes_webAPI.Properties.Repositories
         /// user id= sa; pwd= Senai@132 = Faz a autenticação com o SQL SERVER, passando login e senha
         /// integrated security = Faz a autenticação com o usuário do sistema(windows)
         /// </summary>
-        //private string stringConexao = "Data Source=localhost\\SQLEXPRESS01; initial catalog=CATALOGO; user id=sa; pwd=Senai@132"; Conecta pelas infos de login
-        
+        private string stringConexao = "Data Source=NOTE0113I2\\SQLEXPRESS; initial catalog=CATALOGO; user id=sa; pwd=Senai@132"; 
+        //Conecta pelas infos de login
+
 
         /// <summary>
         /// String de conexão que recebe os parâmetros
@@ -27,7 +28,7 @@ namespace senai_filmes_webAPI.Properties.Repositories
         /// user id= sa; pwd= Senai@132 = Faz a autenticação com o SQL SERVER, passando login e senha
         /// integrated security = Faz a autenticação com o usuário do sistema(windows)
         /// </summary>
-        private string stringConexao = "Data Source=localhost\\SQLEXPRESS01; initial catalog=CATALOGO; integrated security=true";
+        //private string stringConexao = "Data Source=localhost\\SQLEXPRESS01; initial catalog=CATALOGO; integrated security=true";
         public void AtualizarIdCorpo(GeneroDomain Genero)
         {
             throw new NotImplementedException();
@@ -51,12 +52,17 @@ namespace senai_filmes_webAPI.Properties.Repositories
         {
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string queryInsert = $"INSERT INTO Genero(NomeGenero) VALUES ('{NovoGenero.NomeGenero}')";
+                //string queryInsert = $"INSERT INTO Genero(NomeGenero) VALUES ('{NovoGenero.NomeGenero}')";
+                //Não usar assim, pode gerar o efeito Joana D'arc e possibilita SQL injection
+                string queryInsert = $"INSERT INTO Genero(NomeGenero) VALUES (@nomeGenero)";
+
 
                 con.Open();
 
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
                 {
+                    cmd.Parameters.AddWithValue("@nomeGenero", NovoGenero.NomeGenero);
+
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -64,7 +70,19 @@ namespace senai_filmes_webAPI.Properties.Repositories
 
         public void Deletar(int IdGenero)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string queryDelete = "DELETE FROM Genero WHERE IdGenero = @IdINT";
+
+                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                {
+                    cmd.Parameters.AddWithValue("@IdINT", IdGenero);
+
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         /// <summary>
