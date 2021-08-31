@@ -51,3 +51,7 @@ GO
 
 --SELECT * FROM Aluguel;
 --GO
+
+UPDATE Cliente SET SobrenomeCliente = 'Sabella' WHERE IdCliente = 1;
+UPDATE Cliente SET SobrenomeCliente = 'Nascimento' WHERE IdCliente = 2;
+

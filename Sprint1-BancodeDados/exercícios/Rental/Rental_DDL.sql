@@ -1,7 +1,9 @@
-CREATE DATABASE Locadora;
+--GBM = Gustavo Borges Manha
+
+CREATE DATABASE GBM_Rental;
 GO
 
-USE Locadora;
+USE GBM_Rental;
 GO
 
 CREATE TABLE Empresa(
@@ -18,14 +20,10 @@ GO
 
 CREATE TABLE Modelo(
 	IdModelo INT PRIMARY KEY IDENTITY(1,1),
-	IdMarca INT FOREIGN KEY REFERENCES Marca(IdMarca)
+	IdMarca INT FOREIGN KEY REFERENCES Marca(IdMarca),
+	NomeModelo VARCHAR(12),
+	AnoLancamento DATE
 );
-GO
-
-ALTER TABLE Modelo ADD NomeModelo VARCHAR(12);
-GO
-
-ALTER TABLE Modelo ADD AnoLancamento DATE;
 GO
 
 CREATE TABLE Veiculo(
@@ -39,6 +37,7 @@ GO
 CREATE TABLE Cliente(
 	IdCliente INT PRIMARY KEY IDENTITY(1,1),
 	NomeCliente VARCHAR(20) NOT NULL,
+	SobrenomeCliente VARCHAR(28) NOT NULL,
 	CPF CHAR(11) NOT NULL
 );
 GO
@@ -52,5 +51,3 @@ CREATE TABLE Aluguel(
 );
 GO
 
-ALTER TABLE Cliente ADD SobrenomeCliente VARCHAR(26);
-GO
