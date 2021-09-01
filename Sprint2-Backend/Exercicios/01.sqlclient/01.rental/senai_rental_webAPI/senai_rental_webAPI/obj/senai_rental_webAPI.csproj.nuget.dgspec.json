@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exemplos\\01.sqlclient\\01.filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj": {}
+    "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exercicios\\01.sqlclient\\01.rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exemplos\\01.sqlclient\\01.filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj": {
+    "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exercicios\\01.sqlclient\\01.rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exemplos\\01.sqlclient\\01.filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
-        "projectName": "senai_filmes_webAPI",
-        "projectPath": "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exemplos\\01.sqlclient\\01.filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exercicios\\01.sqlclient\\01.rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
+        "projectName": "senai_rental_webAPI",
+        "projectPath": "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exercicios\\01.sqlclient\\01.rental\\senai_rental_webAPI\\senai_rental_webAPI\\senai_rental_webAPI.csproj",
         "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exemplos\\01.sqlclient\\01.filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\obj\\",
+        "outputPath": "C:\\Users\\fic\\Desktop\\GustavoBorgesSouza-2021-2S-2-DM\\Sprint2-Backend\\Exercicios\\01.sqlclient\\01.rental\\senai_rental_webAPI\\senai_rental_webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -25,3 +25,6 @@ INSERT INTO Aluguel(IdVeiculo, IdCliente, DataRetirada, DataDevolucao)
 VALUES (1, 1, '2021-07-03', '2021-07-10'), (2, 2, '2021-07-03', '2021-07-05'), (3, 2, '2021-07-06', '2021-07-16');
 GO
 
+UPDATE Cliente SET NomeCliente = 'Cleiton', SobrenomeCliente = 'Silveira', CPF = '45367265382' WHERE IdCliente = 6;
+
+DELETE FROM Cliente WHERE IdCliente = 5;
