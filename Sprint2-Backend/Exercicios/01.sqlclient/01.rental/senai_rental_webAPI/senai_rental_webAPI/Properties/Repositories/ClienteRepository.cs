@@ -18,8 +18,18 @@ namespace senai_rental_webAPI.Properties.Repositories
         /// user id= sa; pwd= Senai@132 = Faz a autenticação com o SQL SERVER, passando login e senha
         /// integrated security = Faz a autenticação com o usuário do sistema(windows)
         /// </summary>
-        private string stringConexao = "Data Source=NOTE0113I2\\SQLEXPRESS; initial catalog=GBM_Rental; user id=sa; pwd=Senai@132";
-        
+        //private string stringConexao = "Data Source=NOTE0113I2\\SQLEXPRESS; initial catalog=GBM_Rental; user id=sa; pwd=Senai@132";
+
+        //Conecta pelo windows de casa
+        /// <summary>
+        /// String de conexão que recebe os parâmetros
+        /// Data Source = Nome do Servidor
+        /// initial  catalog = Nome do banco de dados
+        /// user id= sa; pwd= Senai@132 = Faz a autenticação com o SQL SERVER, passando login e senha
+        /// integrated security = Faz a autenticação com o usuário do sistema(windows)
+        /// </summary>
+        private string stringConexao = "Data Source=localhost\\SQLEXPRESS01; initial catalog=GBM_Rental; integrated security=true";
+
         public void Atualizar(ClienteDomain ClienteAtualizado)
         {
             using (SqlConnection con = new SqlConnection(stringConexao))

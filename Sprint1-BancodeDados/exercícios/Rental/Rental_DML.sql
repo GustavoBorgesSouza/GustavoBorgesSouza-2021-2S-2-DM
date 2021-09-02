@@ -28,3 +28,17 @@ GO
 UPDATE Cliente SET NomeCliente = 'Cleiton', SobrenomeCliente = 'Silveira', CPF = '45367265382' WHERE IdCliente = 6;
 
 DELETE FROM Cliente WHERE IdCliente = 5;
+
+
+INSERT INTO Veiculo(IdEmpresa, IdModelo, CorVeiculo) VALUES (1, 2, 'Preto');
+
+UPDATE Veiculo SET IdEmpresa = 1, IdModelo = 3, CorVeiculo = 'Vermelho' WHERE IdVeiculo =  4;
+
+DELETE FROM Veiculo WHERE IdVeiculo = 4;
+
+
+INSERT INTO Aluguel(IdVeiculo, IdCliente, DataRetirada, DataDevolucao) VALUES (3, 4, '2021-09-03', '2021-09-08');
+
+UPDATE Aluguel SET IdVeiculo = 2, IdCliente = 1, DataRetirada = '2021-08-10', DataDevolucao = '2021-09-01' WHERE IdAluguel = 4;
+
+DELETE FROM Aluguel WHERE IdAluguel = 4;
