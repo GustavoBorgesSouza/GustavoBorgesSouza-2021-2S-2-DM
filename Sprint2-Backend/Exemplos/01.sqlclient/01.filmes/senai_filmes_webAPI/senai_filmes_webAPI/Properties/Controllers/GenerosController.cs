@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_filmes_webAPI.Properties.Domains;
 using senai_filmes_webAPI.Properties.Interfaces;
@@ -21,6 +22,7 @@ namespace senai_filmes_webAPI.Properties.Controllers
     [Route("api/[controller]")]
     //COntrolador de API
     [ApiController]
+    [Authorize]
     public class GenerosController : ControllerBase
     {
         /// <summary>
@@ -36,6 +38,7 @@ namespace senai_filmes_webAPI.Properties.Controllers
             _GeneroRepository = new GeneroRepository();
         }
 
+        [Authorize(Roles = "comum")]
         [HttpGet]
         //IActionResult = resultado de uma ação
         //Get() = nome genérico
@@ -51,6 +54,7 @@ namespace senai_filmes_webAPI.Properties.Controllers
             return Ok(ListaGeneros);
         }
 
+        [Authorize(Roles = "comum, administrador")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -64,6 +68,7 @@ namespace senai_filmes_webAPI.Properties.Controllers
             return Ok(GeneroBuscado);
         }
 
+        [Authorize(Roles = "administrador")]
         [HttpPost]
         public IActionResult Post(GeneroDomain NovoGenero)
         {
@@ -74,6 +79,7 @@ namespace senai_filmes_webAPI.Properties.Controllers
             return StatusCode(201);
         }
 
+        [Authorize(Roles = "administrador")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, GeneroDomain generoAtualizado)
         {
@@ -106,6 +112,7 @@ namespace senai_filmes_webAPI.Properties.Controllers
             }
         }
 
+        [Authorize(Roles = "administrador")]
         [HttpPut]
         public IActionResult PutBody(GeneroDomain generoAtualizado)
         {
@@ -147,6 +154,7 @@ namespace senai_filmes_webAPI.Properties.Controllers
         /// <param name="id">id do genero a ser deletado</param>
         /// <returns>Endpoint 204= no content</returns>
         /// ex: http://localhost:5000/api/generos/excluir/10
+        [Authorize(Roles = "administrador")]
         [HttpDelete("excluir/{id}")]
         public IActionResult Delete(int id) 
         {

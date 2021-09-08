@@ -9,8 +9,10 @@ CREATE TABLE Usuario(
 ); 
 GO
 
-INSERT INTO Usuario(Email, Senha, Permissao) VALUES ('sgustavo.borges10@gamil.com', '123456', 'admnistrador');
+INSERT INTO Usuario(Email, Senha, Permissao) VALUES ('sgustavo.borges10@gmail.com', '123456', 'administrador');
 
 SELECT IdUsuario, Email, Senha, Permissao FROM Usuario WHERE Email = 'sgustavo.borges10@gmail.com' AND Senha = '123456';
 
-UPDATE Usuario SET Email = 'sgustavo.borges10@gmail.com' WHERE IdUsuario = 1;
+INSERT INTO Usuario(Email, Senha, Permissao) VALUES ('lucas.email.com', '123', 'comum');
+
+SELECT IdUsuario, Email, Senha, Permissao FROM Usuario WHERE Email = 'lucas.email.com' AND Senha = '123';

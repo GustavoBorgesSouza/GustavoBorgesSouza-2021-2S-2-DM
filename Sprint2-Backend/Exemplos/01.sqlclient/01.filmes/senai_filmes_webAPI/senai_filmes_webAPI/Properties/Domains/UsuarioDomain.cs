@@ -17,7 +17,7 @@ namespace senai_filmes_webAPI.Properties.Domains
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Informe a senha")]
-        [StringLength(10, MinimumLength = 3)]
+        [StringLength(10, MinimumLength = 3, ErrorMessage ="O campo precisa ter no mínimo 3 caracteres e no máximo 10")]
         public string Senha { get; set; }
         public string Permissao { get; set; }
     }

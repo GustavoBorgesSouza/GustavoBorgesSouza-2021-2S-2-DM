@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,40 @@ namespace senai_filmes_webAPI
         {
             services.AddControllers();
 
+            services
+                //Define a forma de autenticação
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = "JwtBearer";
+                    options.DefaultChallengeScheme = "JwtBearer";
+                })
+
+                //Define os parâmentros de validação do token
+                .AddJwtBearer("JwtBearer", options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        //Será validado o emissor do token
+                        ValidateIssuer = true,
+                        //Será validado o destinatário do token
+                        ValidateAudience = true,
+                        //Será validado o tempo de vida do token
+                        ValidateLifetime = true,
+
+                        //Define a chave de segurança
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Autenticacao_ChaveFilmes")),
+
+                        //Tempo de expiração do token
+                        ClockSkew = TimeSpan.FromMinutes(30),
+
+                        //Nome do Issuer, ou seja, quem deveria gerar o token
+                        ValidIssuer = "Filmes.webAPI",
+
+                        //Nome do audience, paa quem se destina a validação do token
+                        ValidAudience = "Filmes.webAPI"
+                    };
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,6 +64,14 @@ namespace senai_filmes_webAPI
             }
 
             app.UseRouting();
+
+            //primeiro faz autenticação e dps autorização
+
+            //Habilita a autenticação
+            app.UseAuthentication();    //401
+
+            //Habilita a autorização
+            app.UseAuthorization();     //403
 
             app.UseEndpoints(endpoints =>
             {
