@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai_filmes_webAPI</name>
+    </assembly>
+    <members>
+        <member name="P:senai_filmes_webAPI.Properties.Controllers.GenerosController._GeneroRepository">
+            <summary>
+            Objeto que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Controllers.GenerosController.#ctor">
+            <summary>
+            Instancia um objeto _GeneroRepository para que haja referencia dos métodos no repositório.
+            </summary>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Controllers.GenerosController.Delete(System.Int32)">
+            <summary>
+            Deleta um genero existente
+            </summary>
+            <param name="id">id do genero a ser deletado</param>
+            <returns>Endpoint 204= no content</returns>
+            ex: http://localhost:5000/api/generos/excluir/10
+        </member>
+        <member name="T:senai_filmes_webAPI.Properties.Domains.FilmeDomain">
+            <summary>
+            Classe que define/representa a entidade filme do banco
+            </summary>
+        </member>
+        <member name="T:senai_filmes_webAPI.Properties.Domains.GeneroDomain">
+            <summary>
+            Classe que define/representa a entidade genero do banco
+            </summary>
+        </member>
+        <member name="T:senai_filmes_webAPI.Properties.Domains.UsuarioDomain">
+            <summary>
+            Classe que define a entidade usuário do banco
+            </summary>
+        </member>
+        <member name="T:senai_filmes_webAPI.Properties.Interfaces.IFilmeRepository">
+            <summary>
+            Interface responsável pelo repositório FilmeRepository
+            </summary>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IFilmeRepository.ListarTodos">
+            <summary>
+            Retorna todos os filmes
+            </summary>
+            <returns>Uma lista de filmes</returns>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IFilmeRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um filme pelo Id
+            </summary>
+            <param name="IdGenero">Id do filme que você procurou</param>
+            <returns>Objeto do tipo FilmeDomain que foi buscado</returns>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IFilmeRepository.Cadastrar(senai_filmes_webAPI.Properties.Domains.FilmeDomain)">
+            <summary>
+            Cadastra um novo filme 
+            </summary>
+            <param name="NovoFilme">Objeto NovoFilme com os dados a serem cadastrados</param>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IFilmeRepository.AtualizarIdURL(System.Int32,senai_filmes_webAPI.Properties.Domains.FilmeDomain)">
+            <summary>
+            Atualiza um Filme existente passando o id na URL
+            </summary>
+            <param name="IdFilme">Id do filme que será atualizado</param>
+            <param name="filme">Objeto filme com os dados a serem atualizados</param>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IFilmeRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um filme buscando um Id
+            </summary>
+            <param name="IdFilme">Id do filme a ser deletado</param>
+        </member>
+        <member name="T:senai_filmes_webAPI.Properties.Interfaces.IGeneroRepository">
+            <summary>
+            Interface responsável pelo repositório GeneroRepository
+            </summary>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IGeneroRepository.ListarTodos">
+            <summary>
+            Retorna todos os gêneros
+            </summary>
+            <returns>Uma lista de generos</returns>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IGeneroRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um genero através do seu Id
+            </summary>
+            <param name="IdGenero">Id do genero que será buscado</param>
+            <returns>Objeto do tipo GeneroDomain que foi buscado</returns>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IGeneroRepository.Cadastrar(senai_filmes_webAPI.Properties.Domains.GeneroDomain)">
+            <summary>
+            Cadastra um novo genero
+            </summary>
+            <param name="NovoGenero">Objeto NovoGenero com os dados que serão cadastrados</param>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IGeneroRepository.AtualizarIdCorpo(senai_filmes_webAPI.Properties.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um genero existente passando um Id pelo corpo da requisição
+            </summary>
+            <param name="Genero">Objeto genero com novos dados</param>
+            exemplo: http://localhost:5/api/generos
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IGeneroRepository.AtualizarIdURL(System.Int32,senai_filmes_webAPI.Properties.Domains.GeneroDomain)">
+            <summary>
+            Atualiza um genero existente passando o Id pela URL da requisição
+            </summary>
+            <param name="IdGenero">Id do genero que será atualizado</param>
+            <param name="Genero">Objeto genero com os novos dados</param>
+            http://localhost:5/api/generos/id
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IGeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um genero
+            </summary>
+            <param name="IdGenero">Id do genero que será deletado</param>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Interfaces.IUsuarioRepository.BuscarPorEmailSenha(System.String,System.String)">
+            <summary>
+            Valida o usuario
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
+            <returns>Um objeto do tipo UsuarioDomain que foi  buscado</returns>
+        </member>
+        <member name="F:senai_filmes_webAPI.Properties.Repositories.FilmeRepository.stringConexao">
+            <summary>
+            String de conexão com parametros
+            Data sourece = Nome servidor
+            initial catalog = Nome do bacno de dados
+            integrated security = faz a autenticação do windows
+            </summary>
+        </member>
+        <member name="F:senai_filmes_webAPI.Properties.Repositories.GeneroRepository.stringConexao">
+            <summary>
+            String de conexão que recebe os parâmetros
+            Data Source = Nome do Servidor
+            initial  catalog = Nome do banco de dados
+            user id= sa; pwd= Senai@132 = Faz a autenticação com o SQL SERVER, passando login e senha
+            integrated security = Faz a autenticação com o usuário do sistema(windows)
+            </summary>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Repositories.GeneroRepository.Cadastrar(senai_filmes_webAPI.Properties.Domains.GeneroDomain)">
+            <summary>
+            Cadastrar um novo gênero
+            </summary>
+            <param name="NovoGenero">Objeto NovoGenero com as informações que serão cadastradas</param>
+        </member>
+        <member name="M:senai_filmes_webAPI.Properties.Repositories.GeneroRepository.ListarTodos">
+            <summary>
+            Lista todos os gêneros
+            </summary>
+            <returns>Lista de gêneros</returns>
+        </member>
+        <member name="F:senai_filmes_webAPI.Properties.Repositories.UsuarioRepository.stringConexao">
+            <summary>
+            String de conexão que recebe os parâmetros
+            Data Source = Nome do Servidor
+            initial  catalog = Nome do banco de dados
+            user id= sa; pwd= Senai@132 = Faz a autenticação com o SQL SERVER, passando login e senha
+            integrated security = Faz a autenticação com o usuário do sistema(windows)
+            </summary>
+        </member>
+    </members>
+</doc>

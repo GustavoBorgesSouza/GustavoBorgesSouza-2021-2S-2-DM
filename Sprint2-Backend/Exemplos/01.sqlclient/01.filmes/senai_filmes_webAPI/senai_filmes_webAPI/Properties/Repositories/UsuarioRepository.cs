@@ -17,7 +17,7 @@ namespace senai_filmes_webAPI.Properties.Repositories
         /// user id= sa; pwd= Senai@132 = Faz a autenticação com o SQL SERVER, passando login e senha
         /// integrated security = Faz a autenticação com o usuário do sistema(windows)
         /// </summary>
-        private string stringConexao = "Data Source=NOTE0113I2\\SQLEXPRESS; initial catalog=CATALOGO; user id=sa; pwd=Senai@132"; 
+        //private string stringConexao = "Data Source=NOTE0113I2\\SQLEXPRESS; initial catalog=CATALOGO; user id=sa; pwd=Senai@132"; 
         //Conecta pelas infos de login
 
 
@@ -28,7 +28,7 @@ namespace senai_filmes_webAPI.Properties.Repositories
         /// user id= sa; pwd= Senai@132 = Faz a autenticação com o SQL SERVER, passando login e senha
         /// integrated security = Faz a autenticação com o usuário do sistema(windows)
         /// </summary>
-        //private string stringConexao = "Data Source=localhost\\SQLEXPRESS01; initial catalog=CATALOGO; integrated security=true";
+        private string stringConexao = "Data Source=localhost\\SQLEXPRESS01; initial catalog=CATALOGO; integrated security=true";
 
         public UsuarioDomain BuscarPorEmailSenha(string email, string senha)
         {

@@ -58,23 +58,63 @@
             }];
 
             // 1.	Liste somente os animais cujo tipo seja igual a gato;
-            //
+            console.log('Liste somente os animais cujo tipo seja igual a gato');
+
+            let gatos = pets.filter((pet) => pet.tipoPet == "gato");
+
+            console.log(gatos)
 
             // 2.	Liste somente os animais cuja idade seja superior a 7;
-            //
+            console.log('Liste somente os animais cujo cuja idade seja superior a 7');
 
+            let maiorQue7 = pets.filter((pet)=> pet.idade > 7);
+
+            console.log(maiorQue7);
             // 3.	Some a idade de todos os pets;
-            //
+            console.log('Some a idade de todos os pets');
+
+            let somaIdades = pets.map(i =>{
+                const novaLista = {};
+                novaLista.idade = i.idade;
+
+                return novaLista;
+            }).reduce((total, atual) => total + atual.idade,0);
+
+            console.log(`A soma das idades dos pets é ${somaIdades}`);
+
             
             // 4.	Traga somente os nomes dos pets;
-            //
+            console.log('Traga somente os nomes dos pets');
+
+            let nomePets = pets.map(n => {
+                novaLista = {};
+                novaLista.nome = n.nome;
+
+                return novaLista;
+            })
+
+            console.log(nomePets);
 
             // 5.	Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro;
-            console.log('-----------5-----------');
-            //
+            console.log('Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro');
+            
+            let doguinho = {
+                nome: "doguinho",
+                idade: 13,
+                tipoPet: "cachorro"
+            };
+
+            pets.push(doguinho);
+
+            console.log(pets);
+
 
             // 6. Mostre a quantidade de cachorros que possuem na lista
-            //
+            console.log('Mostre a quantidade de cachorros que possuem na lista');
+
+            let quantiaCachorros = pets.filter((pet) => pet.tipoPet == "cachorro").length;
+            
+            console.log(`Na lista, existem ${quantiaCachorros} cachorros`);
 
     </script>
 

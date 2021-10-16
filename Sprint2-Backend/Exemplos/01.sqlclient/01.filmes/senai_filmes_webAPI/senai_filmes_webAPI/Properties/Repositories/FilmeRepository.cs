@@ -16,8 +16,8 @@ namespace senai_filmes_webAPI.Properties.Repositories
         /// initial catalog = Nome do bacno de dados
         /// integrated security = faz a autenticação do windows
         /// </summary>
-        //private string stringConexao = "Data source=localhost\\SQLEXPRESS01; initial catalog=CATALOGO; integrated security=true";
-        private string stringConexao = "Data Source=NOTE0113I2\\SQLEXPRESS; initial catalog=CATALOGO; user id=sa; pwd=Senai@132";
+        private string stringConexao = "Data source=localhost\\SQLEXPRESS01; initial catalog=CATALOGO; integrated security=true";
+        //private string stringConexao = "Data Source=NOTE0113I2\\SQLEXPRESS; initial catalog=CATALOGO; user id=sa; pwd=Senai@132";
 
         public void AtualizarIdURL(int IdFilme, FilmeDomain filme)
         {
