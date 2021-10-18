@@ -47,22 +47,22 @@ Carro.mudarCor = function mudarCor(corEscolhida){
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-Carro.obterCor = function obterCor(carro){
-    return carro.cor;
+Carro.obterCor = function obterCor(){
+    return "A cor do carro é " + Carro.cor;
 }
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 Carro.obterModelo = function obterModelo(){
-    return carro.modelo;
+    return Carro.modelo;
 }
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-Carro.obterMarca = function obterMarca(carro){
-    return carro.cor;
+Carro.obterMarca = function obterMarca(){
+    return Carro.marca;
 }
 
 /*
@@ -70,7 +70,9 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-carro.obterMarcaModelo = console.log(`Esse carro é um ${carro.obterMarca} ${carro.obterModelo} `);
+Carro.obterMarcaModelo = function obterMarcaModelo(){
+    return `Esse carro é um ${Carro.obterMarca()} ${Carro.obterModelo()} `;
+}
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -98,22 +100,23 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-console.log(carro.obterCor)
+console.log("Qual a cor atual do carro?")
+console.log(Carro.obterCor())
 
 // Mude a cor do carro para vermelho.
-console.log(carro.mudarCor("vermelho"))
+console.log(Carro.mudarCor("vermelho"))
 
 // E agora, qual a cor do carro?
-console.log(carro.obterCor)
+console.log(Carro.obterCor())
 
 // Mude a cor do carro para verde musgo.
-console.log(carro.mudarCor("verde musgo"))
+console.log(Carro.mudarCor("verde musgo"))
 
 // E agora, qual a cor do carro?
-console.log(carro.obterCor)
+console.log(Carro.obterCor())
 
 // Qual a marca e modelo do carro?
-console.log(carro.obterMarcaModelo)
+console.log(Carro.obterMarcaModelo())
 
 // Adicione 2 pessoas no carro.
 
