@@ -104,13 +104,13 @@ console.log("Qual a cor atual do carro?")
 console.log(Carro.obterCor())
 
 // Mude a cor do carro para vermelho.
-console.log(Carro.mudarCor("vermelho"))
+Carro.mudarCor("vermelho")
 
 // E agora, qual a cor do carro?
 console.log(Carro.obterCor())
 
 // Mude a cor do carro para verde musgo.
-console.log(Carro.mudarCor("verde musgo"))
+Carro.mudarCor("verde musgo")
 
 // E agora, qual a cor do carro?
 console.log(Carro.obterCor())
