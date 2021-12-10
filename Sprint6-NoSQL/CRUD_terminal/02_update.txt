@@ -1,0 +1,25 @@
+1.	Atualize os registros criados no exercício anterior, com os filtros abaixo (não se esqueça de buscar pelo _id):
+
+db.materias.update({"_id" : ObjectId("61b208e2b141134e19cbad85")},{titulo: "Titulo Best", descricao: "Java Best", concluida: true})
+Titulo = Titulo Uava
+Descrição = Java Best
+Concluída = verdadeiro
+
+db.materias.update({"_id" : ObjectId("61b20923b141134e19cbad87")},{titulo: "Titulo OSharp", descricao: "CShark", concluida: false})
+Titulo = Titulo OSharp
+Descrição = CShark
+Concluída = falso
+
+
+db.materias.update({"_id" : ObjectId("61b20c07bd550e12a10ffe7a")},{titulo: "Titulo Pirebase", descricao: "Fireb4se"})
+Titulo = Titulo Pirebase
+Descrição = Fireb4se
+
+db.materias.update({"_id" : ObjectId("61b20c07bd550e12a10ffe7b")},{titulo: "Titulo YMicrosoft", descricao: "microSOFT"})
+Titulo = Titulo YMicrosoft
+Descrição = MicroSOFT
+
+db.materias.update({"_id" : ObjectId("61b20a6ebd550e12a10ffe79")},{titulo: "Titulo Roracle", descricao: "Oracle Inc.", dataInclusao: Date()})
+Titulo = Titulo Roracle
+Descrição = Oracle Inc.
+Data de Inclusão = data de hoje

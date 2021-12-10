@@ -1,0 +1,27 @@
+1.	Exclua os últimos 5 itens criados e atualizados nos itens anteriores com as seguintes condições:
+Os dois primeiros pelo _id.
+
+db.materias.remove({"_id" : ObjectId("61b208e2b141134e19cbad85")})
+Titulo = Titulo Uava
+Descrição = Java Best
+Concluída = verdadeiro
+
+db.materias.remove({"_id" : ObjectId("61b20923b141134e19cbad87")})
+Titulo = Titulo OSharp
+Descrição = CShark
+Concluída = falso
+
+Faça o filtro pelo título no item abaixo.
+db.materias.remove({titulo: "Titulo Pirebase"})
+Titulo = Titulo Pirebase
+Descrição = Fireb4se
+
+Faça o filtro pela descrição, nos itens que seguem:
+db.materias.remove({descricao: "microSOFT"})
+Titulo = Titulo YMicrosoft
+Descrição = MicroSOFT
+
+db.materias.remove({descricao: "Oracle Inc."})
+Titulo = Titulo Roracle
+Descrição = Oracle Inc.
+Data de Inclusão = data de hoje
